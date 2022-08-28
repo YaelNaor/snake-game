@@ -64,7 +64,10 @@ class Snake:
         return False
 
     def draw(self, window):
-        pygame.draw.rect(window, colors.PINK, [self.food_x, self.food_y, 10, 10])
-        for block in self.snake_body:
+        food_color = colors.RAINBOW[len(self.snake_body) % len(colors.RAINBOW)]
+        pygame.draw.rect(window, food_color, [self.food_x, self.food_y, 10, 10])
+
+        for i, block in enumerate(self.snake_body):
             x, y = block
-            pygame.draw.rect(window, colors.RED, [x, y, 10, 10])
+            block_color = colors.RAINBOW[i % len(colors.RAINBOW)]
+            pygame.draw.rect(window, block_color, [x, y, 10, 10])

@@ -40,7 +40,7 @@ class Game:
             self.game_over = self.snake.update()
 
     def _draw(self):
-        self.window.fill(colors.AQUA)
+        self.window.fill(colors.WHITE)
         self.snake.draw(self.window)
         pygame.display.update()
 
